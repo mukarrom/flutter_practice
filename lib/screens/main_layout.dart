@@ -1,4 +1,5 @@
 import 'package:basic_test/controllers/auth_controller.dart';
+import 'package:basic_test/screens/google_map.dart';
 import 'package:basic_test/screens/login.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,11 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  final List<Widget> _screens = [HomeScreen(), SettingsScreen()];
+  final List<Widget> _screens = [
+    HomeScreen(),
+    TrafficMapScreen(),
+    SettingsScreen(),
+  ];
   int _currentIndex = 0;
 
   @override
@@ -35,6 +40,7 @@ class _MainLayoutState extends State<MainLayout> {
         selectedIndex: _currentIndex,
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+          NavigationDestination(icon: Icon(Icons.map), label: "Map"),
           NavigationDestination(icon: Icon(Icons.settings), label: "Settings"),
         ],
       ),
